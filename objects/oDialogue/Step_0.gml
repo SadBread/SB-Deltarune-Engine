@@ -8,7 +8,7 @@ if (showText == dialogue) { --proceedAuto; if array_contains(info._seed,"noConfi
 
 
 //press to confirm, skip or hold for auto skip
-if ((showText == dialogue and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0) and !array_contains(info._seed,"noConfirm")) or (autoConfirm)) or (array_length(info._dialogue) == 0)
+if ((showText == dialogue and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0) and (!array_contains(info._seed,"noConfirm") or proceedAuto == 0)) or (autoConfirm)) or (array_length(info._dialogue) == 0)
 {
 	if (line+1 == array_length(info._dialogue))
 	{
