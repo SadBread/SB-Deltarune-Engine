@@ -1,6 +1,6 @@
 //sets the stats for an attack pattern
 //soul mode, box size & other things related
-function pattern_objects(_boxX=160,_boxY=85,_boxXscale=74,_boxYscale=74,_timer=100,_spawnSoul=true,_soulMode="red",_spawnBox=true)
+function pattern_objects(_boxX=160,_boxY=85,_boxXscale=74,_boxYscale=74,_timer=100,_spawnSoul=true,_soulMode="red",_spawnBox=true,_soulXY=-1)
 {
 	oMenuBattle.mode="dodge";
 	
@@ -13,7 +13,11 @@ function pattern_objects(_boxX=160,_boxY=85,_boxXscale=74,_boxYscale=74,_timer=1
 			
 			if array_contains(op.battle_seed,"corner") { xy=[op.x+160,op.y-120]; }
 			
-			instance_create_depth(xy[0],xy[1],-9999,oSoul);
+			with (instance_create_depth(xy[0],xy[1],-9999,oSoul))
+			{
+				mode = _soulMode;
+				if (_soulXY != -1) { targetXY = _soulXY; }
+			}
 		}
 	}
 	

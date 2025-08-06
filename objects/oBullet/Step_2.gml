@@ -1,23 +1,27 @@
 //bullet touch soul damage party & delete bullet
 if (place_meeting(x,y,oSoul) and oSoul.counter == 0)
 {
-	if (oSoul.iframes == 0)
+	if (!array_contains(seed,"safe"))
 	{
-		oSoul.iframes=oSoul.iframesMax;
-		oSoul.damage=damage;
-		if (op.mode == "battle") { oSoul.damage+=oMenuBattle.enemyAttackExtra[numb]; }
-		oSoul.enemyNumb=numb;
-	}
+		if (oSoul.iframes == 0)
+		{
+			oSoul.iframes=oSoul.iframesMax;
+			oSoul.damage=damage;
+			if (op.mode == "battle") { oSoul.damage+=oMenuBattle.enemyAttackExtra[numb]; }
+			oSoul.enemyNumb=numb;
+		}
 	
-	if (!array_contains(seed,"stay")) { instance_destroy(); }
+		if (!array_contains(seed,"stay")) { instance_destroy(); }
+	}
 }
 
 //bullet graze
-if (place_meeting(x,y,oGraze) and !grazed and oSoul.iframes == 0)
+if (place_meeting(x,y,oGraze) and !grazed and oSoul.iframes == 0 and tp != 0)
 {
 	grazed=true; oSoul.graze=1;
 	oMenuBattle.tp=clamp(oMenuBattle.tp+tp,0,100);
 	
+	audio_stop_sound(snd_graze);
 	sound(snd_graze);
 }
 

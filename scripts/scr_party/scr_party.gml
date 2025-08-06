@@ -172,7 +172,7 @@ function party_damage(_numb=0,_amount=100)
 	
 	if (!op.dead) and ((op.mode == "battle" and check) or (op.mode != "battle" and _hp == array_length(op.party)))
 	{
-		op.dead=true;
+		op.dead=true; instance_destroy(oNumberEffect);
 		if (!surface_exists(op.dieSprite)) { op.dieSprite=surface_create(320*2,240*2); }
 		
 		music_stop();

@@ -8,8 +8,6 @@ function cc_base() constructor
 	and look for the realText named   "t_bakesale"   on the leftmost side
 	*/
 	
-	
-	
 	_dialogue=get_text("t_bakesale");
 	
 	_x=[12];

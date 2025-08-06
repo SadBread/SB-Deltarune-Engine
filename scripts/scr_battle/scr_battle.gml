@@ -176,6 +176,9 @@ function destroy_battle(_justDelete=false)
 	repeat (3)
 	{
 		if (oMenuBattle.sel_object[i] != -1) { instance_destroy(oMenuBattle.sel_object[i]); }
+		
+		instance_destroy(op.battle_enemy[i]._handler);
+		
 		++i;
 	}
 	
