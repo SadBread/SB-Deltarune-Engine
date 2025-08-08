@@ -7,6 +7,7 @@ step=-1;
 draw=-1;
 
 spawnWall=true;
+spawnGhostWall = false;
 
 check=false;
 time=0;

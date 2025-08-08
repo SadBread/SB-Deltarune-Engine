@@ -1,9 +1,12 @@
 //generaly resets the most important variables to their default
 //note: this is run every time you switch rooms for example
-function master_reset()
+function master_reset(_partyFollowReset = true)
 {
 	op.overworldMenuSaveCursor=[0,0,0,0,0,0,0,0,0];
-	op.partyFollow=[0,1,2];
+	
+	if (_partyFollowReset)
+		op.partyFollow=[0,1,2];
+		
 	op.cameraMode="overworld";
 	op.camOffsetX=0; op.camOffsetY=0;
 	op.une=0;

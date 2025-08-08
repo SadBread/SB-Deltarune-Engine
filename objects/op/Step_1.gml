@@ -74,8 +74,16 @@ if (mode == "overworld" and !noclip)
 	col=noone;
 	
 	//check for oWall object
-	col=instance_place(playerX,playerY,oWall);
-	if (col != noone) { colObject=[oWall]; }
+	if (!ghostWall)
+	{
+		col=instance_place(playerX,playerY,oWall);
+		if (col != noone) { colObject=[oWall]; }
+	}
+	else
+	{
+		col = instance_place(playerX,playerY,oGhostWall);
+		if (col != noone) { colObject=[oGhostWall]; }
+	}
 	
 	//find which way to push the player
 	if (colObject != -1)
@@ -100,6 +108,9 @@ if (mode == "overworld" and !noclip)
 			
 			++wallCounter;
 		}
+		
+		playerX = round(playerX);
+		playerY = round(playerY);
 	}
 	
 	//slope collision

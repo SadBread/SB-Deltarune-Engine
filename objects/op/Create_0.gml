@@ -198,3 +198,4 @@ dodge_hit=0;
 
 //extra
 slopesAmount = 0; slopeTouch = 0;
+ghostWall = false;

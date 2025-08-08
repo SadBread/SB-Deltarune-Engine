@@ -141,7 +141,7 @@ if (type == "pep" or type == "follower") and ((op.mode == "overworld" and array_
 	
 	cutsceneStarted=false;
 	
-	if (array_contains(op.partyFollow,numb)) or (type == "follower")
+	if (array_contains(op.partyFollow,numb)) or (type == "follower" and followerFollow)
 	{
 		//set numb math
 		if (type == "pep") { _numb=numb+op.partyPosOffset[numb]; }
@@ -218,7 +218,7 @@ if (!cutsceneStarted and op.mode != "overworld" and op.mode != "battleOver")
 		numbClamp=clamp(walkOffset+_numb*12,0,array_length(op.partyPos)-1);
 		
 		//set x & y
-		if (type == "pep" and array_contains(op.partyFollow,numb)) or (type == "follower")
+		if (type == "pep" and array_contains(op.partyFollow,numb)) or (type == "follower" and followerFollow)
 		{
 			x=op.partyPos[numbClamp][0];
 			y=op.partyPos[numbClamp][1];
@@ -450,6 +450,11 @@ if (!front)
 		depth-=(room_height+100);
 		if (op.mode == "darkEntrance") and (numb == 0 or numb == 1 or numb == 2) { depth-=numb*100; }
 	}
+}
+
+if (type == "pep" or type == "follower") and (op.ghostWall)
+{
+	depth -= room_height;
 }
 
 //force front

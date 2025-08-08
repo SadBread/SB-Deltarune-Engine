@@ -1,5 +1,8 @@
 ++time;
-if (time == 1 and spawnWall) { with (instance_create_depth(x,y,0,oWall)) { image_alpha=0; image_xscale=other.image_xscale; image_yscale=other.image_yscale; forceHide=true; if (false) { sticky=true; } } }
+if (time == 1 and spawnWall and !spawnGhostWall) { with (instance_create_depth(x,y,0,oWall)) { image_alpha=0; image_xscale=other.image_xscale; image_yscale=other.image_yscale; forceHide=true; if (false) { sticky=true; } } }
+if (time == 1 and spawnGhostWall) { with (instance_create_depth(x,y,0,oGhostWall)) { image_alpha=0; image_xscale=other.image_xscale; image_yscale=other.image_yscale; } }
+
+
 
 if (op.mode == "overworld" and check) { check=false; }
 

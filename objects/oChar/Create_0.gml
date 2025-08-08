@@ -42,6 +42,8 @@ dodgeAlpha2=1;
 
 subnumber=false;
 
+followerFollow = true;
+
 
 
 //visual Variables

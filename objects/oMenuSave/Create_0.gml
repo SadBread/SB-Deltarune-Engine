@@ -5,7 +5,7 @@ update_allData(); update_stats();
 
 reset_keys();
 reset_cursor();
-master_reset();
+master_reset(false);
 
 page="start";
 if (op.chapter1style) { page="startC1"; }
