@@ -41,6 +41,18 @@ if (page == "start")
 	
 	vertical_cursor(4);
 	
+	if (quickShop)
+	{
+		if tap_cancel()
+		{
+			instance_destroy(oDialogue);
+			
+			page=0; cursor=0;
+			op.mode = "overworld";
+			instance_destroy();
+		}
+	}
+	
 	if tap_confirm(0) { page=i1[sstr._mainButtons[0]]; cursor=0; }
 	if tap_confirm(1) { page=i1[sstr._mainButtons[1]]; cursor=0; }
 	if tap_confirm(2) { page=i1[sstr._mainButtons[2]]; cursor=0; }

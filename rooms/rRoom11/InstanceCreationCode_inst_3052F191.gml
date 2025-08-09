@@ -19,6 +19,7 @@ func = function()
 	,"* You can draw sprites in text boxes with a new command. {sprite:sKris_Down:10:30:0:0} {color:yellow} \"sprite\"."
 	,"* Added puzzle text maker with {color:yellow} effect_puzzleText();"
 	,"* You can make dialogue auto proceed {color:yellow} after a picked delay {color:white} in dialouge structs. {color:blue} _autoSkipText"
+	,"* Added ghost walls for layer swap. {color:yellow} (Check room to the left)"
 	]);
 }
 
