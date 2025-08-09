@@ -21,11 +21,10 @@ function variant_face_match(_face)
 function variant_face_offset()
 {
 	faceXY=[0,0];
-	if (face[0] == sFace_Susie) { faceXY=[-5,-5]; }
 		
 	if (op.mode == "battle")
 	{
-		if (face[0] == sFace_Ralsei or face[0] == sFace_RalseiHat) { faceXY=[-5,-5]; }
+		if (face[0] == sFace_Susie or face[0] == sFace_Ralsei or face[0] == sFace_RalseiHat) { faceXY=[-5,-5]; }
 	}
 }
 
