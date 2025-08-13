@@ -67,7 +67,8 @@ function update_stats()
 	repeat (array_length(op.party))
 	{
 		numb=op.party[i]._numberExistence;
-		if (array_length(op.allData) > numb)
+		
+		if (array_length(op.allData) > numb and op.allData[numb] != -1)
 		{
 			data=op.allData[numb];
 		
