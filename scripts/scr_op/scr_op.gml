@@ -12,7 +12,7 @@ function declare_gamestats()
 	op.name_="John";
 	op.money=0;
 	op.moneyLight=2;
-	op.encounterKills=[0,0,0];
+	op.encounterKills=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	op.party=[];
 	op.partyFollow=[0,1,2];
 

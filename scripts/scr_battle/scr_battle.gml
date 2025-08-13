@@ -150,7 +150,7 @@ function end_battle()
 			op.encounterKills[op.party[i]._numberExistence]+=1;
 			if (op.party[i]._killChange[op.encounterKills[op.party[i]._numberExistence]-1] != -1)
 			{
-				op.party[i]._killChange[op.encounterKills[op.party[i]._numberExistence]-1](op.party[i]._numberExistence);
+				op.party[i]._killChange[op.encounterKills[op.party[i]._numberExistence]-1](i);
 			}else{ op.encounterKills[op.party[i]._numberExistence]-=1; }
 		}
 		
