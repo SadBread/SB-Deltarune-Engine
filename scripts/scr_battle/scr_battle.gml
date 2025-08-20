@@ -172,13 +172,19 @@ function destroy_battle(_justDelete=false)
 	
 	with (oRun) { if (type == "pattern") { instance_destroy(); } }
 	
+	
+	
 	i=0;
 	repeat (3)
 	{
 		if (oMenuBattle.sel_object[i] != -1) { instance_destroy(oMenuBattle.sel_object[i]); }
-		
+		++i;
+	}
+	
+	i=0;
+	repeat (array_length(op.battle_enemy))
+	{
 		instance_destroy(op.battle_enemy[i]._handler);
-		
 		++i;
 	}
 	
