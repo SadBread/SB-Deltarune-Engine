@@ -44,7 +44,7 @@ sideText=["",""];
 knockX=[0,0,0];
 canSpare=false; canTired=false; alertTP=999;
 
-
+bullet_objects = [];
 
 //spawn handlers
 res_i(); repeat (array_length(op.battle_enemy)) { with (instance_create_depth(0,0,0,op.battle_enemy[i]._handler)) { declare_handler(other.i); } ++i; }

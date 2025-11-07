@@ -5,7 +5,17 @@ if (counter > 0)
 	{
 		startXY=[x,y];
 		if (oMenuBattle.exists_box) { targetXY=[oBattleBox.x,oBattleBox.y]; }else{ targetXY=[(op.x),(op.y)]; }
-		if (oMenuBattle.timer == 0) { targetXY=[char(0).x,char(0).y-15]; instance_destroy(oGraze); }
+		if (oMenuBattle.timer == 0)
+		{
+			targetXY=[char(0).x,char(0).y-15];
+			instance_destroy(oGraze);
+			
+			while (array_length(oMenuBattle.bullet_objects) > 0)
+			{
+				instance_destroy(oMenuBattle.bullet_objects[0]);
+				array_delete(oMenuBattle.bullet_objects,0,1);
+			}
+		}
 	}
 	
 	x+=(targetXY[0]-startXY[0])/delay;
