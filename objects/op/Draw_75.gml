@@ -46,3 +46,6 @@ if (false)
 //print(progress);
 
 //print(op.darkEntranceRoom);
+
+//if (array_length(global.gamepads) > 0)
+	//print(gamepad_get_description(global.gamepads[0]),10,10);
