@@ -181,7 +181,7 @@ function start_cutscene(_struct_text,_forceTextWait=0,_continueOrders=false)
 }
 
 //don't create a new struct for a new cutscene just do it in code
-function anything_cutscene(_dialogue=["Test"],_func=-1,_face=[-1])
+function anything_cutscene(_dialogue=["Test"],_func=-1,_face=[-1],_forceTextWait=0,_continueOrders=false)
 {
 	op.textCC = _dialogue;
 	
@@ -189,7 +189,7 @@ function anything_cutscene(_dialogue=["Test"],_func=-1,_face=[-1])
 	
 	op.faceCC = _face;
 	
-	start_cutscene("cc_anything");
+	start_cutscene("cc_anything",_forceTextWait,_continueOrders);
 }
 
 
